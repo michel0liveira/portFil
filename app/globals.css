@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  --radius: 0.75rem;
+
+  /* Dark, premium tech theme */
+  --background: oklch(0.16 0.02 256);
+  --foreground: oklch(0.93 0.01 256);
+
+  --card: oklch(0.2 0.025 256);
+  --card-foreground: oklch(0.93 0.01 256);
+
+  --popover: oklch(0.2 0.025 256);
+  --popover-foreground: oklch(0.93 0.01 256);
+
+  /* Sky blue accent */
+  --primary: oklch(0.72 0.15 232);
+  --primary-foreground: oklch(0.16 0.02 256);
+
+  --secondary: oklch(0.26 0.03 256);
+  --secondary-foreground: oklch(0.93 0.01 256);
+
+  --muted: oklch(0.24 0.025 256);
+  --muted-foreground: oklch(0.68 0.02 256);
+
+  --accent: oklch(0.78 0.13 200);
+  --accent-foreground: oklch(0.16 0.02 256);
+
+  --border: oklch(0.3 0.03 256);
+  --input: oklch(0.3 0.03 256);
+  --ring: oklch(0.72 0.15 232);
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+/* Subtle dotted grid background */
+.grid-bg {
+  background-image: radial-gradient(circle at 1px 1px, oklch(0.3 0.03 256 / 0.6) 1px, transparent 0);
+  background-size: 2rem 2rem;
+}
+
+/* Glow effect for headings */
+.text-glow {
+  text-shadow: 0 0 8px oklch(0.72 0.15 232 / 0.5), 0 0 24px oklch(0.72 0.15 232 / 0.3);
+}
+
+.glow-ring {
+  box-shadow: 0 0 0 1px oklch(0.72 0.15 232 / 0.2), 0 0 40px -8px oklch(0.72 0.15 232 / 0.45);
+}
